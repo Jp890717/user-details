@@ -1,4 +1,25 @@
-.user-container {
-  width: 600px;
-  height: 400px;
+@import "../../scss/variables";
+
+.c-card {
+  &__header {
+    position: relative;
+    background: linear-gradient(to bottom, #F9F9F9 0%, #F9F9F9 65%, $white 65%, $white 100%);
+    &:before {
+      content: '';
+      border-top: 1px solid $border-color;
+      display: block;
+      position: absolute;
+      top: 65%;
+      left: 0;
+      width: 100%;
+    }
+    img {
+      border-radius: 50%;
+      z-index: 1;
+      position: relative;
+      border: 1px solid $border-color;
+      padding: 2px;
+      background: $white;
+    }
+  }
 }

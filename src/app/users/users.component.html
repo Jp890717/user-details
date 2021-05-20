@@ -1,3 +1,42 @@
-<div class="user-container u-border">
-sfsdfds
+<div class="l-row u-grid-justify--center u-grid-align--center vh-100">
+  <div class="l-col-12 l-col-sm-6">
+
+
+
+    <div *ngIf="userLoading; else doneLoading"></div>
+
+    <ng-template #doneLoading>
+      <div class="c-card c-panel--round" *ngFor="let user of usersData.results">
+        <header class="c-card__header u-padding--none u-text--centered u-padding--sm">
+          <img src="{{user.picture.large}}" alt="">
+        </header>
+        <div class="c-card__content u-border--none u-text--centered">
+
+          <div>
+            <p class="c-card__subtitle u-margin--btm-none">My name is</p>
+            <h1>{{user.name.first}} {{user.name.last}}</h1>
+          </div>
+
+          <div>
+            <p class="c-card__subtitle u-margin--btm-none">My email address is</p>
+            <h1><a href="mailto:{{user.email}}">{{user.email}}</a></h1>
+          </div>
+
+          <div>
+            <p class="c-card__subtitle u-margin--btm-none">My birthday is</p>
+            <h1>{{user.dob.date | date : 'M/d/yyyy'}}</h1>
+          </div>
+
+
+          <div>
+
+          </div>
+        </div>
+      </div>
+    </ng-template>
+
+  </div>
 </div>
+
+
+
