@@ -1,8 +1,5 @@
-
-
-
 <div class="l-row u-grid-justify--center u-grid-align--center vh-100">
-  <div class="l-col-12 l-col-sm-6">
+  <div class="l-col-12 l-col-sm-8">
 
     <div *ngIf="userLoading; else doneLoading" class="loader"></div>
 
@@ -13,48 +10,48 @@
         </header>
         <div class="c-card__content u-border--none u-text--centered">
 
-          <div *ngIf="showName">
+          <div id="name" class="item show">
             <p class="c-card__subtitle u-margin--btm-none">My name is</p>
             <h1>{{usersData.name.first}} {{usersData.name.last}}</h1>
           </div>
 
-          <div *ngIf="showEmail">
+          <div id="email" class="item">
             <p class="c-card__subtitle u-margin--btm-none">My email address is</p>
             <h1><a href="mailto:{{usersData.email}}">{{usersData.email}}</a></h1>
           </div>
 
-          <div *ngIf="showBirthDay">
+          <div id="bDay" class="item">
             <p class="c-card__subtitle u-margin--btm-none">My birthday is</p>
             <h1>{{usersData.dob.date | date : 'M/d/yyyy'}}</h1>
           </div>
 
-          <div *ngIf="showAddress">
+          <div id="address" class="item">
             <p class="c-card__subtitle u-margin--btm-none">My address is</p>
             <h1>{{usersData.location.street.number}} - {{usersData.location.street.name}}, {{usersData.location.city}}</h1>
           </div>
 
-          <div *ngIf="showPhone">
-            <p class="c-card__subtitle u-margin&#45;&#45;btm-none">My number is</p>
-            <h1><a href="tel:{{usersData.phone}}">{{usersData.phone}}</a></h1>
+          <div id="phoneNumber" class="item">
+            <p class="c-card__subtitle u-margin--btm-none">My number is</p>
+            <h1><a href="tel:{{usersData.cell}}">{{usersData.cell}}</a></h1>
           </div>
 
-          <div *ngIf="showPassword">
+          <div id="password" class="item">
             <p class="c-card__subtitle u-margin--btm-none">My password is</p>
             <h1>{{usersData.login.password}}</h1>
           </div>
 
           <div class="u-grid-align--center u-display--flex u-grid-justify--center">
-            <app-icon (mouseover)="showName = true; showEmail = false; showBirthDay = false; showAddress = false; showPhone = false; showPassword = false" class="u-margin--rgt-sm" [size]="'24'" [name]="'user'"></app-icon>
-            <app-icon (mouseover)="showEmail = true; showName = false; showBirthDay = false; showAddress = false; showPhone = false; showPassword = false" class="u-margin--rgt-sm" [size]="'24'" [name]="'email'"></app-icon>
-            <app-icon (mouseover)="showBirthDay = true; showName = false; showEmail = false; showAddress = false; showPhone = false; showPassword = false" class="u-margin--rgt-sm" [size]="'24'" [name]="'calendar'"></app-icon>
-            <app-icon (mouseover)="showAddress = true; showName = false; showEmail = false; showBirthDay = false; showPhone = false; showPassword = false" class="u-margin--rgt-sm" [size]="'24'" [name]="'map'"></app-icon>
-            <app-icon (mouseover)="showPhone = true; showName = false; showEmail = false; showBirthDay = false; showAddress = false; showPassword = false" class="u-margin--rgt-sm" [size]="'24'" [name]="'phone'"></app-icon>
-            <app-icon (mouseover)="showPassword = true; showName = false; showEmail = false; showBirthDay = false; showAddress = false; showPhone = false" [size]="'24'" [name]="'lock'"></app-icon>
+            <app-icon (mouseover)="show('name')" class="u-margin--rgt-sm" [size]="'24'" [name]="'user'"></app-icon>
+            <app-icon (mouseover)="show('email')" class="u-margin--rgt-sm" [size]="'24'" [name]="'email-icon'"></app-icon>
+            <app-icon (mouseover)="show('bDay')" class="u-margin--rgt-sm" [size]="'24'" [name]="'calendar'"></app-icon>
+            <app-icon (mouseover)="show('address')" class="u-margin--rgt-sm" [size]="'24'" [name]="'map'"></app-icon>
+            <app-icon (mouseover)="show('phoneNumber')" class="u-margin--rgt-sm" [size]="'24'" [name]="'phone'"></app-icon>
+            <app-icon (mouseover)="show('password')" [size]="'24'" [name]="'lock'"></app-icon>
           </div>
+
         </div>
       </div>
     </ng-template>
-
   </div>
 </div>
 

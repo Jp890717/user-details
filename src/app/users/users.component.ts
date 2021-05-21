@@ -1,6 +1,5 @@
 import {Component, OnInit, ViewEncapsulation} from '@angular/core';
 import {UsersService} from '../services/users.service';
-import {Users} from '../models/users-model';
 
 @Component({
   selector: 'app-users',
@@ -10,16 +9,9 @@ import {Users} from '../models/users-model';
 })
 export class UsersComponent implements OnInit {
 
-  usersData: Users;
+  usersData: any;
   userError: boolean;
   userLoading: boolean;
-
-  showName = true;
-  showEmail = false;
-  showBirthDay = false;
-  showAddress = false;
-  showPhone = false;
-  showPassword = false;
 
   constructor(private usersService: UsersService) {
   }
@@ -38,6 +30,26 @@ export class UsersComponent implements OnInit {
     }, () => {
       this.userError = true;
     });
+  }
+
+  show(id){
+    document.querySelectorAll('.item').forEach(i => {
+      i.classList.remove('show');
+    });
+
+    if (id === 'name') {
+      document.querySelector('#name').classList.add('show');
+    } else if (id === 'email') {
+      document.querySelector('#email').classList.add('show');
+    } else if (id === 'bDay') {
+      document.querySelector('#bDay').classList.add('show');
+    } else if (id === 'address') {
+      document.querySelector('#address').classList.add('show');
+    } else if (id === 'phoneNumber') {
+      document.querySelector('#phoneNumber').classList.add('show');
+    } else if (id === 'password') {
+      document.querySelector('#password').classList.add('show');
+    }
   }
 
 }
