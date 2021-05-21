@@ -3,7 +3,7 @@
 .c-card {
   &__header {
     position: relative;
-    background: linear-gradient(to bottom, #F9F9F9 0%, #F9F9F9 65%, $white 65%, $white 100%);
+    background: linear-gradient(to bottom, $bg-color 0%, $bg-color 65%, $white 65%, $white 100%);
     &:before {
       content: '';
       border-top: 1px solid $border-color;
@@ -20,6 +20,26 @@
       border: 1px solid $border-color;
       padding: 2px;
       background: $white;
+    }
+  }
+
+  .icon {
+    transition: all 0.2s ease-in-out;
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+
+  .item {
+    visibility: hidden;
+    height: 0;
+    transition: opacity 1s ease-in-out;
+    opacity: 0;
+
+    &:hover{
+      visibility: visible;
+      height: auto;
+      opacity: 1;
     }
   }
 }

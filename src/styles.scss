@@ -1,6 +1,22 @@
 @import "scss/custom";
+@import "scss/variables";
 
 body {
   height: 100vh;
-  background: linear-gradient(to bottom, #2C2E31 0%, #2C2E31 50%, #F9F9F9 50%, #F9F9F9 100%);
+  background: linear-gradient(to bottom, $b-dark-grey 0%, $b-dark-grey 50%, $bg-color 50%, $bg-color 100%);
+}
+
+.loader {
+  border: 10px solid $bg-color;
+  border-top: 10px solid $secondary-color;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  animation: spin 1s linear infinite;
+  margin: 0 auto;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }

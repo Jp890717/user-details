@@ -1,0 +1,28 @@
+@import "../../scss/variables";
+
+.icon {
+  height: 16px;
+  width: 16px;
+
+  svg {
+    vertical-align: super;
+    fill: $primary-color;
+  }
+
+  &.font-24 {
+    width: 24px;
+    height: 24px;
+  }
+
+  &.primary {
+    svg {
+      fill: $primary-color;
+    }
+  }
+
+  &.secondary {
+    svg {
+      fill: $b-dark-grey;
+    }
+  }
+}
