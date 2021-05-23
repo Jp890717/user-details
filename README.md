@@ -1,27 +1,33 @@
 # UserDetails
+Created a simple random user app.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.3.
+### Components
+- Users Component
+  - This includes everything for the random users.
+- Icon Component
+  - This is a shareable component for icons and we can always add more icons and colours to it.
 
-## Development server
+### Services
+- User service
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+### App routing
+- Added a simple route for the app
 
-## Code scaffolding
+### Models
+- Models
+  - Created a user model
+  - Created mockuserData for unit test
+  
+### Scss
+- Custom scss
+  - This includes all the style from example.
+- Variable
+  - These are variable I created to use in my app.
+  
+  
+### Test and Build 
+I am running CI on github under actions.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+I have setup a build job in (.github/workflows/build.yml)
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+This will run Unit test and do a production build to [User details gitHub page](https://jp890717.github.io/user-details/users)
